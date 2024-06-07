@@ -24,3 +24,34 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+# 📍단위 테스트 실습
+
+## 0. 학습테스트 실습
+
+### String 클래스에 대한 학습 테스트
+
+- assertThatThrownBy()
+  - [[Java] AssertJ 기본](https://velog.io/@j3beom/Java-AssertJ-%EA%B8%B0%EB%B3%B8)
+
+### Set Collection에 대한 학습 테스트
+
+- `@ParameterizedTest`를 이용한 중복 코드 제거
+
+  - `@ValueSource`
+  
+    - 테스트 메서드에 필요한 파라미터의 개수가 **한 개**일 때 사용한다.
+    
+    - [Junit - Parameterized Test (변수 테스트)](https://tommykim.tistory.com/19)
+    
+  - `@CsvSource`
+  
+    - 테스트 메서드에 필요한 파라미터의 개수가 **두 개 이상**일 때 사용한다.
+    
+  - `@ParameterizedTest`의 `name` 속성
+  
+    - name 속성에 대해 `{파라미터 인덱스}` 를 사용하여 테스트 케이스별 설명을 추가한다.
+    
+    - [[JUnit5] 중복되는 테스트 코드 줄이기](https://yeonyeon.tistory.com/198)
+
+
