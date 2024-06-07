@@ -4,7 +4,7 @@
 ## 학습 효과를 높이기 위해 추천하는 미션 진행 방법
 
 ---
-1. 피드백 강의 전까지 미션 진행 
+1. 피드백 강의 전까지 미션 진행
 > 피드백 강의 전까지 혼자 힘으로 미션 진행. 미션을 진행하면서 하나의 작업이 끝날 때 마다 add, commit
 > 예를 들어 다음 숫자 야구 게임의 경우 0, 1, 2단계까지 구현을 완료한 후 push
 
@@ -32,6 +32,7 @@ ex) git checkout -b apply-feedback
 ### String 클래스에 대한 학습 테스트
 
 - assertThatThrownBy()
+
   - [[Java] AssertJ 기본](https://velog.io/@j3beom/Java-AssertJ-%EA%B8%B0%EB%B3%B8)
 
 ### Set Collection에 대한 학습 테스트
@@ -53,5 +54,3 @@ ex) git checkout -b apply-feedback
     - name 속성에 대해 `{파라미터 인덱스}` 를 사용하여 테스트 케이스별 설명을 추가한다.
     
     - [[JUnit5] 중복되는 테스트 코드 줄이기](https://yeonyeon.tistory.com/198)
-
-
