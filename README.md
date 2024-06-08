@@ -40,17 +40,23 @@ ex) git checkout -b apply-feedback
 - `@ParameterizedTest`를 이용한 중복 코드 제거
 
   - `@ValueSource`
-  
+
     - 테스트 메서드에 필요한 파라미터의 개수가 **한 개**일 때 사용한다.
-    
+
     - [Junit - Parameterized Test (변수 테스트)](https://tommykim.tistory.com/19)
-    
+
   - `@CsvSource`
-  
+
     - 테스트 메서드에 필요한 파라미터의 개수가 **두 개 이상**일 때 사용한다.
-    
+
   - `@ParameterizedTest`의 `name` 속성
-  
+
     - name 속성에 대해 `{파라미터 인덱스}` 를 사용하여 테스트 케이스별 설명을 추가한다.
-    
+
     - [[JUnit5] 중복되는 테스트 코드 줄이기](https://yeonyeon.tistory.com/198)
+
+## 1. 문자열 계산기
+
+- JUnit 테스트 내부에서 사용자 입력 받기
+
+  - [[Java] JUnit으로 System.in, System.out 테스트하기 deep dive](https://steadyjay.tistory.com/10)
