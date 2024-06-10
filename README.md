@@ -66,10 +66,10 @@ ex) git checkout -b apply-feedback
 ### 기능 명세
 
 - main 함수
-  - `do-while` 문 내부
+  - do-while 문 내부
     - 먼저 `numberBaseballGame` 을 호출한다.
     - 이후 새로 시작할지를 입력하라는 메시지를 출력하고, 사용자의 입력을 받는다.
-  - `do-while` 문 조건
+  - do-while 문 조건
     - 게임을 새로 시작하는 1일 경우에만 진행한다.
   
 - `numberBaseballGame` 함수를 만든다.
@@ -77,9 +77,9 @@ ex) git checkout -b apply-feedback
   - do-while 문 내부
     - 세 자리 숫자 `guessNum` 을 입력받는다.
     - 힌트 함수를 모두 호출한다.
-    - 정답 여부를 알려주는 `is3strike(boolean strike)` 함수를 호출한다.
+    - `isStrike` 함수의 반환값을 `is3strike` 변수에 저장한다.
   - do-while 문 조건
-    - `is3strike(boolean strike)` 함수의 반환값이 false일 경우에만 진행한다.
+    - `is3strike` 가 false일 경우에만 진행한다.
     
 - 힌트 함수
   - 스트라이크, 볼, 낫싱에 대한 힌트 문자열을 return 하는 함수를 각각 구현한다.
@@ -92,7 +92,3 @@ ex) git checkout -b apply-feedback
     - `isNothing`
       - `낫싱`을 출력한다.
       - 기본적으로 void 를 반환한다.
-  
-- `is3strike` 함수를 만든다.
-  - `true` 일 경우 맞췄다는 메시지와 게임을 종료한다는 메시지를 출력하고 `true`를 반환한다.
-  - 기본적으로 `false` 를 반환한다.
