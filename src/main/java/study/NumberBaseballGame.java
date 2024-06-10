@@ -25,18 +25,39 @@ public class NumberBaseballGame {
             Scanner sc = new Scanner(System.in);
             int guess = sc.nextInt();
 
-            is3strike = isStrike(guess, target);
             isBall(guess, target);
+            is3strike = isStrike(guess, target);
             isNothing(guess, target);
         } while (!is3strike);
 
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
     }
 
-    static boolean isStrike(int guess, int target) {
-    }
 
     static void isBall(int guess, int target) {
+    }
+
+    static boolean isStrike(int guess, int target) {
+        int strikeCnt = countStrike(guess, target);
+
+        if (strikeCnt == 3) {
+            System.out.println("3스트라이크");
+            return true;
+        }
+        if (strikeCnt == 0) {
+            return false;
+        }
+
+        System.out.println(strikeCnt + "스트라이크");
+        return false;
+    }
+
+    static int countStrike(int guess, int target) {
+
+        if (guess == 0) return 0;    // 끝나면 0을 반환
+
+        if (guess % 10 == target % 10) return 1 + countStrike(guess / 10, target / 10);
+        return countStrike(guess / 10, target / 10);
     }
 
     static void isNothing(int guess, int target) {
