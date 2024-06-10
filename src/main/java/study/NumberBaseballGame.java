@@ -35,6 +35,35 @@ public class NumberBaseballGame {
 
 
     static void isBall(int guess, int target) {
+        int ballCnt = countBall(guess, target);
+
+        if(ballCnt > 0) {
+            System.out.print(ballCnt + "볼 ");
+        }
+    }
+
+    static int countBall(int guess, int target) {
+        int ballCnt = 0;
+
+        int g1 = guess / 100;
+        int g2 = guess / 10 % 10;
+        int g3 = guess % 10;
+
+        int t1 = target / 100;
+        int t2 = target / 10 % 10;
+        int t3 = target % 10;
+
+        if (g1 != t1 && (g1 == t2 || g1 == t3)) {
+            ballCnt++;
+        }
+        if (g2 != t2 && (g2 == t1 || g2 == t3)) {
+            ballCnt++;
+        }
+        if (g3 != t3 && (g3 == t1 || g3 == t2)) {
+            ballCnt++;
+        }
+
+        return ballCnt;
     }
 
     static boolean isStrike(int guess, int target) {
@@ -45,6 +74,7 @@ public class NumberBaseballGame {
             return true;
         }
         if (strikeCnt == 0) {
+//            System.out.println();
             return false;
         }
 
