@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class NumberBaseballGameTest {
@@ -21,9 +22,20 @@ class NumberBaseballGameTest {
         boolean is3Strike = nbg.isStrike(guess, target);
         int strikeCnt = nbg.countStrike(guess, target);
 
-        Assertions.assertThat(is3Strike).isEqualTo(expStrike);
+        assertThat(is3Strike).isEqualTo(expStrike);
 
-        Assertions.assertThat(strikeCnt).isEqualTo(expCnt);
+        assertThat(strikeCnt).isEqualTo(expCnt);
+    }
+
+    @DisplayName("볼 검증")
+    @CsvSource(value = {"123:713:1", "145:713:1", "671:713:2"}, delimiter = ':')
+    @ParameterizedTest(name = "[{index}] 추측 {0}과 목표 {1}에 대해: 볼의 개수는 {2}")
+    public void ballTest(int guess, int target, int expCnt) {
+        // when
+        int ballCnt = nbg.countBall(guess, target);
+
+        // then
+        assertThat(ballCnt).isEqualTo(expCnt);
     }
 
 }
