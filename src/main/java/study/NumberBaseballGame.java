@@ -21,23 +21,37 @@ public class NumberBaseballGame {
 
         boolean is3strike;
         do {
-            System.out.println("숫자를 입력해 주세요 : ");
+            System.out.print("\n숫자를 입력해 주세요 : ");
             Scanner sc = new Scanner(System.in);
             int guess = sc.nextInt();
 
+            isNothing(guess, target);
             isBall(guess, target);
             is3strike = isStrike(guess, target);
-            isNothing(guess, target);
         } while (!is3strike);
 
         System.out.println("3개의 숫자를 모두 맞히셨습니다! 게임 종료");
+    }
+
+    static void isNothing(int guess, int target) {
+        int g1 = guess / 100;
+        int g2 = guess / 10 % 10;
+        int g3 = guess % 10;
+
+        int t1 = target / 100;
+        int t2 = target / 10 % 10;
+        int t3 = target % 10;
+
+        if ((g1 != t1 && g1 != t2 && g1 != t3) && (g2 != t1 && g2 != t1 && g2 != t2) && (g3 != t3 && g3 != t2 && g3 != t3)) {
+            System.out.print("낫싱");
+        }
     }
 
 
     static void isBall(int guess, int target) {
         int ballCnt = countBall(guess, target);
 
-        if(ballCnt > 0) {
+        if (ballCnt > 0) {
             System.out.print(ballCnt + "볼 ");
         }
     }
@@ -70,15 +84,14 @@ public class NumberBaseballGame {
         int strikeCnt = countStrike(guess, target);
 
         if (strikeCnt == 3) {
-            System.out.println("3스트라이크");
+            System.out.print("3스트라이크 ");
             return true;
         }
         if (strikeCnt == 0) {
-//            System.out.println();
             return false;
         }
 
-        System.out.println(strikeCnt + "스트라이크");
+        System.out.print(strikeCnt + "스트라이크 ");
         return false;
     }
 
@@ -88,8 +101,5 @@ public class NumberBaseballGame {
 
         if (guess % 10 == target % 10) return 1 + countStrike(guess / 10, target / 10);
         return countStrike(guess / 10, target / 10);
-    }
-
-    static void isNothing(int guess, int target) {
     }
 }
