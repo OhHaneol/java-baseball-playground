@@ -2,11 +2,11 @@ package applyFeedback;
 
 public class Ball {
     private final int position;
-    private final int ballNo;
+    private final BallNumber ballNo;
 
     public Ball(int position, int ballNo) {
         this.position = position;
-        this.ballNo = ballNo;
+        this.ballNo = new BallNumber(ballNo);
     }
 
     public BallStatus play(Ball myBall) {
@@ -20,7 +20,7 @@ public class Ball {
         return BallStatus.NOTHING;
     }
 
-    private boolean matchBallNo(int ballNo) {
+    private boolean matchBallNo(BallNumber ballNo) {
         return this.ballNo == ballNo;
     }
 }
