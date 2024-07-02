@@ -43,7 +43,4 @@ public class StringTest {
                 .hasMessageContaining("String index out of range")
                 .hasMessageContaining(String.valueOf(str.length()));
     }
-
-
-
 }
