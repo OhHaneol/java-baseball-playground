@@ -10,7 +10,8 @@ public class Ball {
     }
 
     public BallStatus play(Ball myBall) {
-        if (this.equals(myBall)) {          // myBall.equal(this) 는 nullPointException 이 발생할 수 있다.
+//        if (this.equals(myBall)) {          // myBall.equal(this) 는 nullPointException 이 발생할 수 있다.
+        if (myBall.ballNo == this.ballNo && myBall.position == this.position) {          // myBall.equal(this) 는 nullPointException 이 발생할 수 있다.
             return BallStatus.STRIKE;
         }
         if (matchBallNo(myBall.ballNo)) {
